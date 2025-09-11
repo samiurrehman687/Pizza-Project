@@ -1,0 +1,15 @@
+{% extends 'account/base.html' %}
+{% load static %}
+
+{% block title %}Order - ZaikaSlice{% endblock %}
+
+{% block content %}
+<div class="order-container">
+    <h1>Place Your Pizza Order</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="submit-btn">Place Order</button>
+    </form>
+</div>
+{% endblock %}

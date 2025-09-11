@@ -1,0 +1,25 @@
+{% extends "account/base.html" %}
+
+{% block title %}Register - ZaikaSlice{% endblock %}
+
+{% block content %}
+<div class="registration-page">
+    <div class="registration-box">
+        {% if messages %}
+        {% for message in messages %}
+            <div class="alert">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+        <h1>Create Your Account</h1>
+        <p>Join <strong>Pizza Nest</strong> and enjoy delicious pizzas!</p>
+        <form action="" method="POST" class="registration-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Register" class="btn-register">
+        </form>
+        <p class="login-link">
+            Already have an account? <a href="#">Login here</a>
+        </p>
+    </div>
+</div>
+{% endblock content %}

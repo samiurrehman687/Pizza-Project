@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ZaikaSlice{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'account/css/base.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-...hash..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <!-- Logo can be added here -->
+            </div>
+
+            <div class="nav-right">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'menu' %}">Menu</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                    <li><a href="{% url 'help' %}">Help</a></li>
+                    {% if request.user.is_authenticated and not request.user.is_staff and not request.user.is_superuser %}
+                        <li><a href="{% url 'customer_dash' %}">Dashboard</a></li>
+                    {% else %}
+                        <li><a href="{% url 'registor' %}">Signup</a></li>
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                    {% endif %}
+                </ul>
+
+                <div class="hamburger" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu (will be filled by JS) -->
+        <div class="mobile-menu" id="mobileMenu"></div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <script src="{% static 'account/js/base.js' %}"></script>
+</body>
+</html>

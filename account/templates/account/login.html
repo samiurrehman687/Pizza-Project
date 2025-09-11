@@ -1,0 +1,15 @@
+{% extends "account/base.html" %}
+{% block title %}login - ZaikaSlice{% endblock %}
+{% block content %}
+<div class="login-form-container">
+    <h2>Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Login">
+    </form>
+
+    <p>Don't have an account? <a href="{% url 'registor' %}">Register here</a></p>
+    <a href="{% url 'password_reset' %}"style="color: #e8620eff; text-decoration: none;">Forget Password</a>
+</div>
+{% endblock content %}

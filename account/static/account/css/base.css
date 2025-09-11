@@ -1,0 +1,868 @@
+/* Reset and basics */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+/* Header Navigation */
+header {
+    width: 100%;
+    padding: 20px 50px;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #28a745;
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;              /* initially hidden */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;                  /* .... */
+    right: 10px;                /*  padding right */
+    width: 200px;               /* adjust width */
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* shadow for separation */
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.mobile-menu a {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid #555;
+    display: block;            /* ensure full width clickable */
+    box-sizing: border-box;    /* padding included in width */
+}
+
+.mobile-menu a:last-child {
+    border-bottom: none;       /* remove border for last item */
+}
+
+.mobile-menu a:hover {
+    background-color: #28a745;
+}
+
+/* When open */
+.mobile-menu.open {
+    display: flex;
+}
+
+/* Optional: spacing between links */
+.mobile-menu a + a {
+    margin-top: 2px;           /*  gap between links */
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    flex-wrap: wrap-reverse;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    margin: 10px 0;
+}
+
+.hero-content .description {
+    font-size: 16px;
+    color: #ccc;
+}
+
+.order-btn {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.order-btn:hover {
+    background-color: #1e7b32;
+}
+
+.hero-image {
+    position: relative;
+    max-width: 500px;
+}
+
+.hero-image img {
+    width: 100%;
+    padding-top: 20px;
+    border-radius: 20px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image {
+        margin-bottom: 30px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .mobile-menu {
+        right: 20px;       /* ensure mobile position */
+        width: 180px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .order-btn {
+        padding: 10px 20px;
+    }
+
+    .mobile-menu {
+        width: 150px;      /* extra small screens */
+        right: 15px;
+    }
+}
+
+
+/*............... menu card style............. */
+/* Container styling */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, max-content));
+    gap: 20px;
+    justify-content: left; /* align card to the center */
+    padding: 20px;
+}
+
+/* Card design */
+.card {
+    background: black;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Card image */
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Card text */
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.card .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.card .stock {
+    font-size: 16px;
+    color: white;
+}
+/* order button css here */
+.button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff4d4d;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: #e60000;
+}
+
+/* Contact Page */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color:white#333;
+}
+
+.contact-info {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: white;
+}
+.line{
+    text-align: center;
+}
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    background: black;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.input-field,
+.textarea-field {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border 0.3s ease;
+}
+
+.input-field:focus,
+.textarea-field:focus {
+    border-color: #ff6600;
+    outline: none;
+}
+
+.textarea-field {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-form input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: green;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form input[type="submit"]:hover {
+    background: rgb(4, 93, 4);
+}
+label{
+    color: black;
+}
+.alert{
+    text-decoration: solid;
+    color: red;
+    text-align: center;
+}
+
+/* help page css */
+.help-page {
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
+
+.help-head {
+    font-size: 36px;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.help-section {
+    background-color:rgb(48, 9, 9);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.help-section h2 {
+    color:white;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.help-section p, .help-section ul {
+    color: white;
+    text-align: center;
+}
+/* Registration done page */
+.registration-done {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 20px;
+}
+
+.reg-box {
+    background-color: #111;       /* dark bg */
+    color: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    max-width: 500px;
+}
+
+.reg-box h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.reg-box p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* Home button */
+.btn-home {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.btn-home:hover {
+    background-color: #1e7b32;
+}
+
+/* Light mode support */
+body.light-mode .reg-box {
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+body.light-mode .btn-home {
+    background-color: #28a745;
+    color: white;
+}
+
+/* Registration Page */
+.registration-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+label{
+    color: white;
+    
+}
+.registration-box {
+    background-color: #111;  /* dark theme box */
+    color: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    max-width: 450px;
+    text-align: center;
+}
+
+.registration-box h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.registration-box p {
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+/* Form Inputs */
+.registration-form input[type="text"],
+.registration-form input[type="email"],
+.registration-form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    transition: border 0.3s ease;
+}
+
+.registration-form input:focus {
+    outline: none;
+    border-color: #28a745;
+}
+
+/* Register Button */
+.btn-register {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn-register:hover {
+    background-color: rgb(4, 93, 4);
+}
+
+/* Login link */
+.login-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.login-link a {
+    color: #28a745;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    color: #1e7b32;
+}
+
+/* Light mode support */
+body.light-mode .registration-box {
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+body.light-mode .btn-register {
+    background-color: #28a745;
+    color: white;
+}
+
+/* Login Page */
+/* Login Page Styling */
+.login-form-container {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #222; /* dark background */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    color: white;
+    text-align: center;
+}
+
+.login-form-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.login-form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form-container input[type="text"],
+.login-form-container input[type="password"],
+.login-form-container input[type="email"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #555;
+    background-color: white;
+    color:black;
+    font-size: 15px;
+}
+
+.login-form-container input[type="text"]:focus,
+.login-form-container input[type="password"]:focus,
+.login-form-container input[type="email"]:focus {
+    border-color: black;
+    outline: none;
+}
+
+.login-form-container input[type="submit"] {
+    padding: 12px;
+    background-color: green;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-form-container input[type="submit"]:hover {
+    background-color: rgb(4, 93, 4);
+}
+
+.login-form-container p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.login-form-container p a {
+    color: #ff6600;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-form-container p a:hover {
+    text-decoration: underline;
+}
+
+/* Messages / alerts */
+.login-form-container .alert {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .login-form-container {
+        margin: 30px 15px;
+        padding: 20px;
+    }
+
+    .login-form-container h2 {
+        font-size: 24px;
+    }
+}
+label{
+    color: white;
+}
+
+/* Customer css*/
+.dashboard-wrapper {
+    background-color: #000; /* black background */
+    color: #fff; /* default text white */
+    padding: 30px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Welcome Section */
+.welcome-section {
+    margin-bottom: 30px;
+}
+
+.welcome-section h1 {
+    font-size: 32px;
+    color: #ffcc00; /* gold */
+    margin-bottom: 5px;
+}
+
+.welcome-section p {
+    font-size: 18px;
+    color: #ccc;
+}
+
+/* Profile Button */
+.profile-btn {
+    background: linear-gradient(45deg, #ff4d4d, #ff9900);
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.profile-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255,153,0,0.6);
+}
+
+/* Profile Dropdown */
+.profile-dropdown {
+    display: none;
+    background-color: #111;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+    width: 320px;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.profile-dropdown.show {
+    display: block;
+}
+
+.profile-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background-color: #222;
+    border-radius: 10px;
+    transition: background 0.2s;
+}
+
+.profile-list li:hover {
+    background: linear-gradient(90deg, #ff4d4d, #ff9900);
+    color: #fff;
+}
+
+/* Logout Button */
+.logout-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff4d4d;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.logout-btn:hover {
+    background-color: #ff1a1a;
+    transform: scale(1.05);
+}
+
+/* Orders Table */
+.orders-table {
+    margin-top: 40px;
+}
+
+.orders-table h2 {
+    color: #ffcc00;
+    margin-bottom: 15px;
+    font-size: 26px;
+}
+
+.orders-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #111;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.orders-table th, 
+.orders-table td {
+    padding: 15px 10px;
+    text-align: left;
+}
+
+.orders-table thead th {
+    background: linear-gradient(45deg, #ff4d4d, #ff9900);
+    color: #fff;
+}
+
+.orders-table tbody tr {
+    border-bottom: 1px solid #333;
+    transition: background 0.3s;
+}
+
+.orders-table tbody tr:hover {
+    background: rgba(255,153,0,0.2);
+}
+
+.orders-table tbody td {
+    color: #fff;
+}
+
+
+/* order Form css */
+.order-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+.order-container h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 2em;
+}
+
+.order-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.order-container form p {
+    margin-bottom: 15px;
+}
+
+.order-container input[type="text"],
+.order-container input[type="number"],
+.order-container input[type="tel"] {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: 0.3s;
+}
+
+.order-container input[type="text"]:focus,
+.order-container input[type="number"]:focus,
+.order-container input[type="tel"]:focus {
+    border-color: #ff4e50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255,78,80,0.4);
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #ff4e50, #f9d423);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #f9d423, #ff4e50);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* order show customer dashboard css */
+/* Orders Table */
+#ordersTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background-color: #111; /* dark table background */
+    color: #fff; /* white text */
+    display: none; /*  hidden first */
+}
+
+#ordersTable th, 
+#ordersTable td {
+    border: 1px solid white; /* grey border for dark bg */
+    padding: 10px;
+    text-align: center;
+}
+
+#ordersTable th {
+    background-color: white; /* dark header */
+    font-weight: bold;
+    color: #ffcc00; /* yellowish header text for visibility */
+}
+
+#ordersTable tr:nth-child(even) {
+    background-color: white; /* alternate row */
+}
+
+#ordersTable tr:nth-child(odd) {
+    background-color: #111; /* odd row */
+}
+
+#ordersTable tr:hover {
+    background-color: #333;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #ordersTable {
+        font-size: 12px;
+    }
+    #ordersTable th,
+    #ordersTable td {
+        padding: 6px;
+    }
+}

@@ -1,0 +1,14 @@
+{% extends "account/base.html" %}
+
+{% block title %}Registration Successful - ZaikaSlice{% endblock %}
+
+{% block content %}
+<div class="registration-done">
+    <div class="reg-box">
+        <h1>Registration Successful!</h1>
+        <p>Thank you for registering at <strong>ZaikaSlice</strong>. 
+        Please check your email to activate your account before you can log in.</p>
+        <a href="{% url 'home' %}" class="btn-home">Back to Home</a>
+    </div>
+</div>
+{% endblock content %}

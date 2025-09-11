@@ -1,0 +1,58 @@
+{% extends "account/base.html" %}
+
+{% block content %}
+<div class="dashboard-wrapper">
+
+    <!-- Welcome Section -->
+    <div class="welcome-section">
+        <h1>Welcome, {{ request.user.first_name }} {{request.user.last_name}}!</h1>
+        <p>Glad to see you back at ZaikaSlice.</p>
+
+        <!-- Profile Toggle Button -->
+        <button id="profileToggle" class="profile-btn">View Profile</button>
+    </div>
+
+    <!-- Profile Dropdown -->
+    <div id="profileDropdown" class="profile-dropdown">
+        <ul class="profile-list">
+            <li><span>Username:</span> {{ request.user.username }}</li>
+            <li><span>Email:</span> {{ request.user.email }}</li>
+            <li><span>First Name:</span> {{ request.user.first_name }}</li>
+            <li><span>Last Name:</span> {{ request.user.last_name }}</li>
+        </ul>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="logout-btn">Logout</button>
+        </form>
+    </div>
+
+    <!-- Orders Table (Always Visible) -->
+    <div class="orders-table">
+        <h2>My Orders</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pizza Name</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                <tr>
+                    <td>{{ order.pizza_name }}</td>
+                    <td>{{ order.quantity }}</td>
+                    <td>{{ order.status }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3">No orders yet.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock content %}
+
