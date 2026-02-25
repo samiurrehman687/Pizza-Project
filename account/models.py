@@ -14,7 +14,7 @@ class Order(models.Model):
 
     def __str__(self):
         return self.pizza_name
-    
+# Items
 class Item(models.Model):
     name = models.CharField('Name',max_length=255)
     picture = models.FileField('Picture', upload_to='items_pictures/')
@@ -23,7 +23,7 @@ class Item(models.Model):
 
     def __str__(self):
         return self.name
-
+# Customer query 
 class CustomerQuery(models.Model):
     name = models.CharField(max_length=255)
     email = models.EmailField(max_length=255)
@@ -32,7 +32,24 @@ class CustomerQuery(models.Model):
 
     def __str__(self):
         return self.name
-    
+# Site Data Model 
+class SiteDataModel(models.Model):
+    CHOICE_FIELD = [
+        ('home_para' ,'Home Paragraph'),
+        ('home_img','Home Image'),
+        ('contact', 'Contact No'),
+        ('email' , 'Email'),
+        ('address', 'Address'),
+    ]
+    name =  models.CharField(max_length=255, choices=CHOICE_FIELD, unique=True)
+    home_imge = models.ImageField(upload_to='home_image/', blank=True)
+    text = models.TextField(blank=True, null=True)
+    contact_no = models.CharField(max_length=15, blank=True, null=True)
+    address = models.CharField(max_length=255, blank=True, null=True)
+    email = models.EmailField(max_length=255 , blank= True , null= True)
+
+    def __str__(self):
+        return self.name
 # if site under construction.....
 class underconstruction(models.Model):
     is_under_const = models.BooleanField(default=False)

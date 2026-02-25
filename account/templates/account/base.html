@@ -7,13 +7,18 @@
     <title>{% block title %}ZaikaSlice{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'account/css/base.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-...hash..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="icon" type="image/x-icon" href="{% static 'account/images/zaika_favicon.png' %}">
 </head>
 <body>
     <header>
         <nav>
             <div class="nav-left">
                 <!-- Logo can be added here -->
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'account/images/zaika_logo.png' %}" alt="Zaika Slice Logo">
+                </a>
             </div>
+            
 
             <div class="nav-right">
                 <ul class="nav-links" id="navLinks">
@@ -24,8 +29,10 @@
                     {% if request.user.is_authenticated and not request.user.is_staff and not request.user.is_superuser %}
                         <li><a href="{% url 'customer_dash' %}">Dashboard</a></li>
                     {% else %}
-                        <li><a href="{% url 'registor' %}">Signup</a></li>
-                        <li><a href="{% url 'login' %}">Login</a></li>
+                        <div class='auth-div'>
+                            <li><a href="{% url 'registor' %}" class='signup'>Create Account</a></li>
+                            <li><a href="{% url 'login' %}" class='login'>Login</a></li>
+                        </div>
                     {% endif %}
                 </ul>
 

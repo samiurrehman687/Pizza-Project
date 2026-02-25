@@ -1,7 +1,7 @@
 from django.shortcuts import render , redirect
 from django.views import View
-from django.views.generic import ListView , FormView
-from account.models import Item , CustomerQuery 
+from django.views.generic import ListView , FormView , TemplateView
+from account.models import Item , CustomerQuery , SiteDataModel
 from account.forms import CustomerQueryForm , RegistrationsForm , LoginForm , OrderForm
 from django.urls import reverse_lazy
 from django.contrib import messages
@@ -22,11 +22,33 @@ from django.contrib.sites.shortcuts import get_current_site
 logger = logging.getLogger('account')
 
 @method_decorator(login_not_required , name='dispatch')
-class PizzaHome(View):
-    def get(self, request, *args, **kwargs):
-        logger.debug("PizzaHome page accessed by user: %s", request.user)
-        return render(request, 'account/home.html')
+class PizzaHome(TemplateView):
+    template_name = 'account/home.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
 
+        try:
+            # Fetch home paragraph and image from database
+                        # Fetch paragraph safely
+            para_obj = SiteDataModel.objects.filter(name='home_para').first()
+            context['home_Paragraph'] = para_obj.text if para_obj and hasattr(para_obj, 'text') else \
+                'Welcome to ZaikaSlice – Where Every Bite Tells a Story of Flavor, Freshness, and Love. That Brings People Together, Making Every Slice Feel Like Home!'
+
+            # Fetch image safely
+            home_img_obj = SiteDataModel.objects.filter(name='home_img').first()
+            context['home_picture'] = home_img_obj.home_img.url if home_img_obj and hasattr(home_img_obj, 'home_img') else \
+                '/static/account/images/pizzahome.png'
+
+            logger.info("Home paragraph and image fetched successfully from SiteDataModel.")
+
+        except SiteDataModel.DoesNotExist as e:
+            # Use default values if DB entries not found
+            context['home_Paragraph'] = 'Welcome to ZaikaSlice – Where Every Bite Tells a Story of Flavor, Freshness, and Love. That Brings People Together, Making Every Slice Feel Like Home!'
+            context['home_picture'] = '/static/account/images/pizzahome.png'
+
+            logger.warning(f"SiteDataModel entry for home paragraph or image missing. Using default values. Details: {e}")
+
+        return context
 @method_decorator(login_not_required , name='dispatch')
 class PizzaMenu(ListView):
     model = Item
@@ -47,6 +69,22 @@ class Contact(FormView):
     form_class = CustomerQueryForm
     template_name = 'account/contact.html'
     success_url = reverse_lazy('contact')
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # getting contact no
+            # Fetch from database
+        contact_obj = SiteDataModel.objects.filter(name='contact').first
+        email_obj = SiteDataModel.objects.filter(name='email').first
+        address_obj = SiteDataModel.objects.filter(name='contact').first
+
+        context["number"] = contact_obj.contact_no if contact_obj and hasattr(contact_obj, 'contact_no') else '+92347965358' 
+        context["your_email"] =  email_obj.email if email_obj and hasattr(email_obj, 'email') else 'zaika@example.com'
+        context["your_address"] = address_obj.address if address_obj and hasattr(address_obj ,'address') else 'Pakistan'
+
+        logger.info("SiteDataModel fetched successfully: contact, email, address.")
+
+        return context    
+    
 
     def form_valid(self, form):
         try:

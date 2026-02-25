@@ -1,5 +1,5 @@
 from django.contrib import admin
-from account.models import Order, Item , CustomerQuery , underconstruction
+from account.models import Order, Item , CustomerQuery , underconstruction , SiteDataModel
 # Register your models here.
 
 @admin.register(Order)
@@ -33,3 +33,8 @@ class ContactQueryAdmin(admin.ModelAdmin):
 class underconstructionAdmin(admin.ModelAdmin):
     list_display = ('is_under_const', 'uc_note', 'uc_duration', 'uc_update_at')
     fields = ('uc_note', 'uc_duration','is_under_const')
+
+@admin.register(SiteDataModel)
+class SiteModelAdmin(admin.ModelAdmin):
+    list_display = ('name' , 'text')
+    search_fields = ('name',)

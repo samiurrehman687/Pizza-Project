@@ -8,12 +8,12 @@
         <h1>ZaikaSlice</h1>
         <p>ORIGINAL RECIPE</p>
         <p class="description">
-            Welcome to ZaikaSlice – Where Every Bite Tells a Story of Flavor, Freshness, and Love. That Brings People Together, Making Every Slice Feel Like Home!
+            {{home_Paragraph}}
         </p>
         <a href="{% url 'menu' %}" class="order-btn">ORDER NOW</a>
     </div>
     <div class="hero-image">
-        <img src="{% static 'account/images/pizzahome.png' %}" alt="Pizza">
+        <img src="{{ home_picture}}" alt="Pizza">
     </div>
 </section>
 {% endblock %}

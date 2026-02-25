@@ -17,24 +17,55 @@ header {
     padding: 20px 50px;
     position: relative;
 }
-
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 60px; /* fixed nav height */
+    padding: 0 20px;
+    background-color: #1a1a1a;
+
+    position: fixed; /* fixed top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999; /* content upper side the content*/
+    padding-top: 50px ;
+    background-color: #1a1a1a; 
+    padding-bottom: 40px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-left img {
+    height: 100px; /* logo size */
+    width: auto; /* aspect ratio maintain */
+    object-fit: contain;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     gap: 30px;
+    justify-content: center;
+
+    justify-content: center; /* horizontally center */
+    align-items: center;     /* vertically center */
+    
+    width: 100%;             /* parent full width */
+    margin: 0;               /* extra spacing remove */
+    padding-right: 75px;
 }
 
 .nav-links li a {
     color: white;
     text-decoration: none;
-    font-weight: 500;
+    font-size: 18px;
     transition: color 0.3s;
+    padding-left: 20px;
 }
 
 .nav-links li a:hover {
@@ -45,6 +76,46 @@ nav {
     display: none;
     font-size: 24px;
     cursor: pointer;
+}
+/* Common style for both signup and login */
+.nav-right .signup,
+.nav-right .login {
+    display: inline-block;
+    padding: 10px 20px;
+    background: green;
+    color: white;
+    font-weight: 500;       /* px nahi lagana, sirf number */
+    text-decoration: none;
+    border: 2px solid green;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+/* Optional: alag hover effect */
+.nav-right .signup:hover,
+.nav-right .login:hover {
+    background: rgb(8, 99, 8);
+    color: white;
+    border-color: white;
+}
+.nav-right .auth-div{
+    margin-left: 50px;
+    display: flex;
+    gap: 30px;
+}
+/* ====== Nav Left Mobile Responsive ====== */
+@media (max-width: 768px) {
+    .nav-left img {
+        height: 35px; /* tablet aur small screens ke liye chhota logo */
+        width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-left img {
+        height: 80px; /* mobile ke liye aur chhota logo */
+        width: auto;
+    }
 }
 
 /* Mobile Menu */
@@ -123,6 +194,7 @@ nav {
     color: white;
     padding: 12px 30px;
     border-radius: 8px;
+    border: 2px solid green;
     text-decoration: none;
     margin-top: 20px;
     font-weight: bold;
@@ -130,7 +202,8 @@ nav {
 }
 
 .order-btn:hover {
-    background-color: #1e7b32;
+    background: rgb(4, 93, 4);
+    border-color: white;
 }
 
 .hero-image {
@@ -187,12 +260,18 @@ nav {
 
 /*............... menu card style............. */
 /* Container styling */
+.menu{
+    text-align:center; 
+    padding-top:60px;
+    font-size: 45px;
+}
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, max-content));
     gap: 20px;
     justify-content: left; /* align card to the center */
     padding: 20px;
+    padding-top: 40px
 }
 
 /* Card design */
@@ -257,8 +336,10 @@ nav {
 h2 {
     text-align: center;
     margin-bottom: 20px;
-    font-size: 28px;
+    font-size: 45px;
     color:white#333;
+    padding-top: 60px;
+    
 }
 
 .contact-info {
@@ -277,6 +358,7 @@ h2 {
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
 }
 
 .input-field,
@@ -308,7 +390,7 @@ h2 {
     background: green;
     color: #fff;
     font-size: 16px;
-    border: none;
+    border: 2px solid green;
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s ease;
@@ -316,6 +398,7 @@ h2 {
 
 .contact-form input[type="submit"]:hover {
     background: rgb(4, 93, 4);
+    border-color: white;
 }
 label{
     color: black;
@@ -329,8 +412,8 @@ label{
 /* help page css */
 .help-page {
     padding: 20px;
-    background-color: black;
     color: white;
+    padding-top: 60px;
 }
 
 .help-head {
@@ -396,12 +479,14 @@ label{
     color: white;
     text-decoration: none;
     font-weight: bold;
+    border: 2px solid green;
     border-radius: 8px;
     transition: background 0.3s ease;
 }
 
 .btn-home:hover {
-    background-color: #1e7b32;
+    background: rgb(4, 93, 4);
+    border-color: white;
 }
 
 /* Light mode support */
@@ -422,6 +507,9 @@ body.light-mode .btn-home {
     align-items: center;
     min-height: 80vh;
     padding: 20px;
+    padding-top: 90px;
+    
+    
 }
 label{
     color: white;
@@ -435,6 +523,7 @@ label{
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     max-width: 450px;
     text-align: center;
+    
 }
 
 .registration-box h1 {
@@ -472,7 +561,7 @@ label{
     font-size: 16px;
     background-color: green;
     color: white;
-    border: none;
+    border: 2px solid green;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
@@ -480,7 +569,8 @@ label{
 }
 
 .btn-register:hover {
-    background-color: rgb(4, 93, 4);
+    background: rgb(4, 93, 4);
+    border-color: white;
 }
 
 /* Login link */
@@ -562,14 +652,15 @@ body.light-mode .btn-register {
     color: white;
     font-size: 16px;
     font-weight: bold;
-    border: none;
+    border: 2px solid green;
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s ease;
 }
 
 .login-form-container input[type="submit"]:hover {
-    background-color: rgb(4, 93, 4);
+    background: rgb(4, 93, 4);
+    border-color: white;
 }
 
 .login-form-container p {
