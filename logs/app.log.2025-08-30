@@ -1,6 +1,0 @@
-2025-08-30 09:32:08,216 INFO django.utils.autoreload Watching for file changes with StatReloader
-2025-08-30 09:32:16,960 INFO django.utils.autoreload D:\django5\mypizzaproject\pizzanest\settings.py changed, reloading.
-2025-08-30 09:32:17,908 INFO django.utils.autoreload Watching for file changes with StatReloader
-2025-08-30 09:32:20,436 INFO django.utils.autoreload D:\django5\mypizzaproject\pizzanest\settings.py changed, reloading.
-2025-08-30 09:32:21,307 INFO django.utils.autoreload Watching for file changes with StatReloader
-2025-08-30 09:32:40,319 INFO django.utils.autoreload Watching for file changes with StatReloader
