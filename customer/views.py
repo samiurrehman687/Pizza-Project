@@ -6,9 +6,9 @@ from account.models import Order
 
 class CustomerDash(IsCustomerMixin,TemplateView):
     template_name = 'customer/customer_dashboard.html' 
-    login_url = '/login/'  # exact path
+    login_url = '/login/'  
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # Sirf current user ke orders
+        # only Current user orders.....
         context['orders'] = Order.objects.filter(customer=self.request.user)
         return context
