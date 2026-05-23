@@ -1,0 +1,563 @@
+2026-02-25 06:10:45,061 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 06:10:47,934 WARNING django.request Not Found: /favicon.ico
+2026-02-25 06:43:23,916 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 06:43:29,518 WARNING django.request Not Found: /favicon.ico
+2026-02-25 06:48:06,220 WARNING django.request Not Found: /favicon.ico
+2026-02-25 06:48:48,126 WARNING django.request Not Found: /favicon.ico
+2026-02-25 06:48:58,637 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 06:49:08,561 WARNING django.request Not Found: /favicon.ico
+2026-02-25 06:50:06,685 WARNING django.request Not Found: /favicon.ico
+2026-02-25 06:51:38,722 WARNING django.request Not Found: /favicon.ico
+2026-02-25 06:52:55,364 WARNING django.request Not Found: /favicon.ico
+2026-02-25 06:58:51,618 INFO django.utils.autoreload D:\django5\mypizzaproject\account\models.py changed, reloading.
+2026-02-25 06:58:52,660 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 07:28:09,403 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 07:30:11,682 INFO django.utils.autoreload D:\django5\mypizzaproject\account\admin.py changed, reloading.
+2026-02-25 07:30:12,670 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 07:30:43,608 INFO django.utils.autoreload D:\django5\mypizzaproject\account\admin.py changed, reloading.
+2026-02-25 07:30:44,531 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 07:33:07,836 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 07:52:38,551 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 07:52:40,205 ERROR django.request Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\views\generic\base.py", line 228, in get
+    context = self.get_context_data(**kwargs)
+  File "D:\django5\mypizzaproject\account\views.py", line 31, in get_context_data
+    data = SiteDataModel.objects.filter(name_in=['home_para', 'home_img'])
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\db\models\query.py", line 1493, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\db\models\query.py", line 1511, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\db\models\query.py", line 1518, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\db\models\sql\query.py", line 1646, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\db\models\sql\query.py", line 1678, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\db\models\sql\query.py", line 1526, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\db\models\sql\query.py", line 1333, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\db\models\sql\query.py", line 1805, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'name_in' into field. Choices are: address, contact_no, home_imge, id, name, text
+2026-02-25 07:53:00,728 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 07:53:01,618 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 07:53:03,540 WARNING django.request Not Found: /alt="Pizza"
+2026-02-25 07:53:51,170 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 07:53:52,258 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 07:53:53,190 WARNING django.request Not Found: /alt="Pizza"
+2026-02-25 07:54:52,240 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 07:54:53,118 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 07:54:55,481 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 07:54:56,328 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 07:54:58,200 ERROR django.request Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\views\generic\base.py", line 229, in get
+    return self.render_to_response(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\views\generic\base.py", line 202, in render_to_response
+    template=self.get_template_names(),
+             ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\views\generic\base.py", line 214, in get_template_names
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: TemplateResponseMixin requires either a definition of 'template_name' or an implementation of 'get_template_names()'
+2026-02-25 07:55:16,116 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 07:55:17,126 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 07:55:18,498 WARNING django.request Not Found: /alt="Pizza"
+2026-02-25 07:57:53,889 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 07:57:54,996 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 07:57:56,545 WARNING django.request Not Found: /alt="Pizza"
+2026-02-25 07:58:00,155 WARNING django.request Not Found: /alt="Pizza"
+2026-02-25 07:59:37,684 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 07:59:38,540 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 07:59:40,162 WARNING django.request Not Found: /alt="Pizza"
+2026-02-25 07:59:41,964 WARNING django.request Not Found: /alt="Pizza"
+2026-02-25 08:00:47,749 WARNING django.request Not Found: /alt="Pizza"
+2026-02-25 08:00:48,925 WARNING django.request Not Found: /alt="Pizza"
+2026-02-25 08:00:49,053 WARNING django.request Not Found: /alt="Pizza"
+2026-02-25 08:00:49,220 WARNING django.request Not Found: /alt="Pizza"
+2026-02-25 08:00:49,396 WARNING django.request Not Found: /alt="Pizza"
+2026-02-25 08:00:49,603 WARNING django.request Not Found: /alt="Pizza"
+2026-02-25 08:00:49,715 WARNING django.request Not Found: /alt="Pizza"
+2026-02-25 08:00:49,943 WARNING django.request Not Found: /alt="Pizza"
+2026-02-25 08:00:50,334 WARNING django.request Not Found: /alt="Pizza"
+2026-02-25 08:00:50,456 WARNING django.request Not Found: /alt="Pizza"
+2026-02-25 08:00:50,905 WARNING django.request Not Found: /alt="Pizza"
+2026-02-25 08:00:51,060 WARNING django.request Not Found: /alt="Pizza"
+2026-02-25 08:00:51,333 WARNING django.request Not Found: /alt="Pizza"
+2026-02-25 08:01:20,042 WARNING django.request Not Found: /None
+2026-02-25 08:01:21,125 WARNING django.request Not Found: /None
+2026-02-25 08:01:21,261 WARNING django.request Not Found: /None
+2026-02-25 08:04:31,109 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 08:04:32,161 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 08:04:55,149 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 08:04:56,094 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 08:05:13,577 ERROR django.request Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'home_para'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'home_para'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'home_para'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [home_para] in [{'True': True, 'False': False, 'None': None}, {}, {}, {'view': <account.views.PizzaHome object at 0x000001FA7F7B4830>, 'home_Paragraph': None, 'home_img': None}]
+2026-02-25 08:05:45,132 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 08:05:46,142 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 08:05:47,825 ERROR django.request Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'home_para'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'home_para'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'home_para'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [home_para] in [{'True': True, 'False': False, 'None': None}, {}, {}, {'view': <account.views.PizzaHome object at 0x000001C128FC4980>, 'home_Paragraph': None, 'home_image': None}]
+2026-02-25 08:06:06,159 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 08:06:07,122 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 08:06:21,543 ERROR django.request Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'home_para'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'home_para'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'home_para'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ~~~~~~~~~~~^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [home_para] in [{'True': True, 'False': False, 'None': None}, {}, {}, {'view': <account.views.PizzaHome object at 0x0000021159D48830>, 'home_Paragraph': None, 'home_image': None}]
+2026-02-25 08:08:23,128 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 08:08:24,413 WARNING django.request Not Found: /None
+2026-02-25 08:08:26,848 WARNING django.request Not Found: /None
+2026-02-25 08:10:32,488 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 08:10:33,420 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 08:12:32,997 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 08:12:34,148 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 08:12:36,244 WARNING django.request Not Found: /account/homepizza.png
+2026-02-25 08:12:55,939 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 08:12:56,975 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 08:13:13,541 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 08:13:14,496 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 08:14:56,365 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 08:14:57,287 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 08:15:05,379 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 08:15:06,491 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 08:15:26,346 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 08:15:27,281 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 08:15:45,933 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 08:15:46,966 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 08:16:02,368 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 08:16:03,407 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 08:17:42,302 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 08:17:43,189 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 08:17:45,286 ERROR django.request Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\views\generic\base.py", line 228, in get
+    context = self.get_context_data(**kwargs)
+  File "D:\django5\mypizzaproject\account\views.py", line 33, in get_context_data
+    context['home_paragraph'] = data_dict.get('home_para').text
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'text'
+2026-02-25 08:19:20,279 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 08:19:21,305 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 08:28:40,942 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 08:31:51,822 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 08:31:52,795 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 08:33:11,887 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 08:33:12,834 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 08:58:31,769 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 08:58:34,084 WARNING account SiteDataModel entry for home paragraph or image missing. Using default values. Details: SiteDataModel matching query does not exist.
+2026-02-25 08:58:36,831 WARNING account SiteDataModel entry missing, using default values. Details: SiteDataModel matching query does not exist.
+2026-02-25 08:58:38,805 WARNING account SiteDataModel entry for home paragraph or image missing. Using default values. Details: SiteDataModel matching query does not exist.
+2026-02-25 08:59:24,246 WARNING account SiteDataModel entry for home paragraph or image missing. Using default values. Details: SiteDataModel matching query does not exist.
+2026-02-25 08:59:27,294 WARNING account SiteDataModel entry for home paragraph or image missing. Using default values. Details: SiteDataModel matching query does not exist.
+2026-02-25 08:59:41,909 WARNING account SiteDataModel entry for home paragraph or image missing. Using default values. Details: SiteDataModel matching query does not exist.
+2026-02-25 09:00:10,000 WARNING account SiteDataModel entry for home paragraph or image missing. Using default values. Details: SiteDataModel matching query does not exist.
+2026-02-25 09:00:41,081 WARNING account SiteDataModel entry for home paragraph or image missing. Using default values. Details: SiteDataModel matching query does not exist.
+2026-02-25 09:00:41,634 WARNING account SiteDataModel entry for home paragraph or image missing. Using default values. Details: SiteDataModel matching query does not exist.
+2026-02-25 09:01:52,643 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 09:01:53,633 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 09:02:01,535 WARNING account SiteDataModel entry for home paragraph or image missing. Using default values. Details: SiteDataModel matching query does not exist.
+2026-02-25 09:02:02,269 WARNING account SiteDataModel entry for home paragraph or image missing. Using default values. Details: SiteDataModel matching query does not exist.
+2026-02-25 09:02:02,465 WARNING account SiteDataModel entry for home paragraph or image missing. Using default values. Details: SiteDataModel matching query does not exist.
+2026-02-25 09:02:02,640 WARNING account SiteDataModel entry for home paragraph or image missing. Using default values. Details: SiteDataModel matching query does not exist.
+2026-02-25 09:02:11,403 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 09:02:12,293 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 09:02:37,557 WARNING account SiteDataModel entry for home paragraph or image missing. Using default values. Details: SiteDataModel matching query does not exist.
+2026-02-25 09:02:38,190 WARNING account SiteDataModel entry for home paragraph or image missing. Using default values. Details: SiteDataModel matching query does not exist.
+2026-02-25 09:02:38,848 WARNING account SiteDataModel entry for home paragraph or image missing. Using default values. Details: SiteDataModel matching query does not exist.
+2026-02-25 09:02:39,014 WARNING account SiteDataModel entry for home paragraph or image missing. Using default values. Details: SiteDataModel matching query does not exist.
+2026-02-25 09:02:45,470 WARNING account SiteDataModel entry for home paragraph or image missing. Using default values. Details: SiteDataModel matching query does not exist.
+2026-02-25 09:02:46,377 WARNING account SiteDataModel entry for home paragraph or image missing. Using default values. Details: SiteDataModel matching query does not exist.
+2026-02-25 09:02:46,554 WARNING account SiteDataModel entry for home paragraph or image missing. Using default values. Details: SiteDataModel matching query does not exist.
+2026-02-25 09:03:44,704 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 09:03:46,329 WARNING account SiteDataModel entry for home paragraph or image missing. Using default values. Details: SiteDataModel matching query does not exist.
+2026-02-25 09:04:08,656 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 09:04:09,582 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 09:04:11,563 WARNING account SiteDataModel entry for home paragraph or image missing. Using default values. Details: SiteDataModel matching query does not exist.
+2026-02-25 09:05:06,427 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 09:05:07,446 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 09:05:09,136 WARNING account SiteDataModel entry for home paragraph or image missing. Using default values. Details: SiteDataModel matching query does not exist.
+2026-02-25 09:05:40,595 INFO account Home paragraph and image fetched successfully from SiteDataModel.
+2026-02-25 09:06:18,338 INFO account Home paragraph and image fetched successfully from SiteDataModel.
+2026-02-25 09:09:54,996 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 09:09:56,001 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 09:09:57,656 ERROR django.request Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\views\generic\base.py", line 228, in get
+    context = self.get_context_data(**kwargs)
+  File "D:\django5\mypizzaproject\account\views.py", line 36, in get_context_data
+    context['home_Paragraph'] = para_obj.text
+                                ^^^^^^^^^^^^^
+AttributeError: 'QuerySet' object has no attribute 'text'
+2026-02-25 09:10:42,422 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 09:10:43,330 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 09:10:44,954 ERROR django.request Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\django5\mypizzaproject\venv\Lib\site-packages\django\views\generic\base.py", line 228, in get
+    context = self.get_context_data(**kwargs)
+  File "D:\django5\mypizzaproject\account\views.py", line 36, in get_context_data
+    context['home_Paragraph'] = para_obj.text
+                                ^^^^^^^^^^^^^
+AttributeError: 'function' object has no attribute 'text'
+2026-02-25 09:12:16,828 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 09:12:17,855 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 09:12:18,822 INFO account Home paragraph and image fetched successfully from SiteDataModel.
+2026-02-25 09:12:36,848 INFO account Home paragraph and image fetched successfully from SiteDataModel.
+2026-02-25 09:12:38,731 INFO account Home paragraph and image fetched successfully from SiteDataModel.
+2026-02-25 09:14:13,959 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 09:14:15,443 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 09:23:42,381 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 09:23:44,503 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 09:23:52,436 INFO account Home paragraph and image fetched successfully from SiteDataModel.
+2026-02-25 09:23:56,245 INFO account SiteDataModel fetched successfully: contact, email, address.
+2026-02-25 09:24:12,993 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 09:24:14,759 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 09:24:15,539 INFO account SiteDataModel fetched successfully: contact, email, address.
+2026-02-25 09:24:16,480 INFO account Home paragraph and image fetched successfully from SiteDataModel.
+2026-02-25 09:24:44,950 INFO django.utils.autoreload D:\django5\mypizzaproject\account\views.py changed, reloading.
+2026-02-25 09:24:46,755 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 09:28:56,211 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 09:28:57,850 INFO account Home paragraph and image fetched successfully from SiteDataModel.
+2026-02-25 10:28:04,119 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-02-25 10:28:06,754 INFO account Home paragraph and image fetched successfully from SiteDataModel.
